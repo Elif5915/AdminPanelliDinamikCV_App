@@ -1,0 +1,23 @@
+﻿@model AdminPanelliDinamikCV_App.Models.Entity.CertificateAwards
+
+@{
+    ViewBag.Title = "CerAwardAdd";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>
+    New Certificate&Award Adding Page
+</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Comment")
+    @Html.TextBoxFor(x => x.Comment, new { @class = "form-control" })
+    <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-primary">Add</button>
+</form>

@@ -1,0 +1,11 @@
+﻿@using AdminPanelliDinamikCV_App.Models.Entity
+@model List<Hobbies>
+
+<div class="resume-section-content">
+    <h2 class="mb-5">Interests</h2>
+    @foreach(var hobby in Model)
+    {
+    <p> @hobby.Hobby</p>
+    <p class="mb-0">@hobby.Hobby2</p>
+    }
+</div>

@@ -1,0 +1,24 @@
+﻿@using AdminPanelliDinamikCV_App.Models.Entity
+@model List<Hobbies>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Hobby Editing Page</h2>
+<br />
+<form method="post">
+
+    @foreach (var item in Model)
+    {
+
+        <label>Hobby</label>
+        <textarea rows="4" class="form-control" name="Hobby">@item.Hobby</textarea>
+        <label>Hobby 2</label>
+        <textarea rows="4" class="form-control" name="Hobby2">@item.Hobby2</textarea>
+    }
+    <br /><br />
+    <button class="btn btn-info">Update</button>
+
+</form>

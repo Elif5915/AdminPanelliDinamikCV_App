@@ -1,0 +1,19 @@
+﻿@using AdminPanelliDinamikCV_App.Models.Entity
+@model List<Experiences>
+
+<div class="resume-section-content">
+
+    <h2 class="mb-5">Experience</h2>
+
+    @foreach (var personExp in Model)
+     {
+        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+            <div class="flex-grow-1">
+                <h3 class="mb-0">@personExp.Title</h3>
+                <div class="subheading mb-3">@personExp.Subhead</div>
+                <p>@personExp.Comment</p>
+            </div>
+            <div class="flex-shrink-0"><span class="text-primary">@personExp.Date</span></div>
+        </div>
+     }
+    </div>

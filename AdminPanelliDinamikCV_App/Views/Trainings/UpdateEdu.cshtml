@@ -1,0 +1,30 @@
+﻿@model AdminPanelliDinamikCV_App.Models.Entity.Trainings
+@{
+    ViewBag.Title = "UpdateEdu";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4> Edit Education İnformation Page</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Title")
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Title, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("SubTitle")
+    @Html.TextBoxFor(x => x.SubTitle, new { @class = "form-control" })
+    <br />
+    @Html.Label("SubTitle2")
+    @Html.TextBoxFor(x => x.SubTitle2, new { @class = "form-control" })
+    <br />
+    @Html.Label("GNO")
+    @Html.TextBoxFor(x => x.Gno, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Gno, "", new { @style = "color:red" })
+    <br />
+    @Html.Label("Date")
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-info">Update</button>
+</form>

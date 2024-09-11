@@ -1,0 +1,21 @@
+﻿@model AdminPanelliDinamikCV_App.Models.Entity.Abilities
+
+@{
+    ViewBag.Title = "updateAbilities";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h4>Skills Update Page</h4>
+<br />
+
+<form method="post">
+    @Html.Label("Talent")
+    @Html.TextBoxFor(x=> x.Talent, new { @class ="form-control"})
+    <br />
+    @Html.Label("Rate")
+    @Html.TextBoxFor(x=> x.Rate, new { @class = "form-control"})
+    <br />
+
+    <button class="btn btn-success">Update</button>
+</form>

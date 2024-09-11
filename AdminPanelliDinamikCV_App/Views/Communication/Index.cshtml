@@ -1,0 +1,77 @@
+﻿@using AdminPanelliDinamikCV_App.Models.Entity
+@model List<Communication>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+
+               <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+
+                        </div>
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header p-2">
+                                 
+                                </div>
+                                <div class="card-body">
+                                       <div class="tab-pane" id="timeline">
+                                           
+                                            <div class="timeline timeline-inverse">
+                                               @foreach(var item in Model) {
+
+                                                <div class="time-label">
+                                                    <span class="bg-info">
+                                                       @(((DateTime)item.Date).ToString("dd-MMM-yyyy"))
+                                                    </span>
+                                                </div>
+
+                                                <div>
+                                                    <i class="fas fa-comments bg-warning"></i>
+
+                                                    <div class="timeline-item">
+                                                        <span class="time"><i class="far fa-clock"></i> @item.Email</span>
+
+                                                        <h3 class="timeline-header"><a href="#">@item.NameSurname</a> @item.Subject</h3>
+
+                                                        <div class="timeline-body">
+                                                      @item.Message
+                                                        </div>
+                                                
+                                                    </div>
+                                                </div>
+
+                                               
+                                               }
+                                            </div>
+                                        </div>
+                          
+                                    </div>
+                           
+                                </div>
+                            </div>
+                           
+                        </div>
+                     
+                    </div>
+                
+                </div>
+   
+     
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../../dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="../../dist/js/demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿@using AdminPanelliDinamikCV_App.Models.Entity
+@model List<Experiences>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Experience List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Subhead</th>
+        <th>Date</th>
+        <th></th>
+       
+    </tr>
+    @foreach(var item in Model)
+     {
+        <tr>
+            <td>
+                @item.Id
+            </td>
+            <td>
+                @item.Title
+            </td>
+            <td>
+                @item.Subhead
+            </td>
+            <td>
+                @item.Date
+            </td>
+            <td>
+            <a href="/Experiences/ExpDelete/@item.Id" class="btn btn-danger">Delete</a>
+            <a href="/Experiences/ExpGet/@item.Id" class="btn btn-info">Update</a>
+            </td>
+          
+        </tr>
+     }
+</table>
+<a href="/Experiences/ExpAdd/" class="btn btn-primary">Add New Experience</a>
+

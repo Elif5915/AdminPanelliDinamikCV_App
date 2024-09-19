@@ -33,5 +33,6 @@ namespace AdminPanelliDinamikCV_App.Models.Entity
         public virtual DbSet<Experiences> Experiences { get; set; }
         public virtual DbSet<Hobbies> Hobbies { get; set; }
         public virtual DbSet<Trainings> Trainings { get; set; }
+        public virtual DbSet<SocialMedia> SocialMedia { get; set; }
     }
 }

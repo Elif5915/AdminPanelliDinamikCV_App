@@ -71,6 +71,16 @@
           <Property Name="Hobby" Type="varchar" MaxLength="500" />
           <Property Name="Hobby2" Type="varchar" MaxLength="500" />
         </EntityType>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" />
+          <Property Name="Link" Type="varchar(max)" />
+          <Property Name="Icon" Type="varchar(max)" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
         <EntityType Name="Trainings">
           <Key>
             <PropertyRef Name="Id" />
@@ -90,6 +100,7 @@
           <EntitySet Name="Communication" EntityType="Self.Communication" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Experiences" EntityType="Self.Experiences" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hobbies" EntityType="Self.Hobbies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SocialMedia" EntityType="Self.SocialMedia" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Trainings" EntityType="Self.Trainings" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -182,7 +193,18 @@
           <EntitySet Name="Experiences" EntityType="Self.Experiences" />
           <EntitySet Name="Hobbies" EntityType="Self.Hobbies" />
           <EntitySet Name="Trainings" EntityType="Self.Trainings" />
+          <EntitySet Name="SocialMedia" EntityType="DbCvSitesiModel.SocialMedia" />
         </EntityContainer>
+        <EntityType Name="SocialMedia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Icon" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -271,6 +293,17 @@
                 <ScalarProperty Name="SubTitle2" ColumnName="SubTitle2" />
                 <ScalarProperty Name="Gno" ColumnName="Gno" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SocialMedia">
+            <EntityTypeMapping TypeName="DbCvSitesiModel.SocialMedia">
+              <MappingFragment StoreEntitySet="SocialMedia">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

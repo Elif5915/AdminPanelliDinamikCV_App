@@ -373,7 +373,7 @@ if (!document.createElement('canvas').getContext) {
     seagreen: '#2E8B57',
     seashell: '#FFF5EE',
     sienna: '#A0522D',
-    skyblue: '#87CEEB',
+    skyblue: '#bd5d38',
     slateblue: '#6A5ACD',
     slategray: '#708090',
     slategrey: '#708090',

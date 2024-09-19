@@ -4,9 +4,13 @@ using System.Web.Mvc;
 
 namespace AdminPanelliDinamikCV_App.Controllers
 {
+    [Authorize] //eğitim controller içindeki tüm methodlarda kontrol edilip giriş yapıldıysa gidilsin isterse,
+                //birden fazla controllere tek tek yazmamak ve genel olarak projeye authorize yapmak için ise global asax kısmında ekleme yapıyoruz.
     public class TrainingsController : Controller
     {
         GenericRepository<Trainings> repo = new GenericRepository<Trainings>();
+
+        //[Authorize] metod bazlı sadece list kısmına gidemeyiz 
         public ActionResult Index()
         {
             var edu = repo.List();

@@ -19,6 +19,11 @@ namespace AdminPanelliDinamikCV_App.Controllers
             return View(degerler);
         }
 
+        public PartialViewResult SocialMedia()
+        {
+            var sMedia = dbCv.SocialMedia.Where(x => x.Status == true).ToList();
+            return PartialView(sMedia);
+        }
         public PartialViewResult Experience() //Deneyimler 
         {
             var exp = dbCv.Experiences.ToList();

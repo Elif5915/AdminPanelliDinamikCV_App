@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@{string renk =""; }
+@{string renk = ""; }
 @{string labelRenk = "";}
 
 <!DOCTYPE html>
@@ -13,93 +13,87 @@
 
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-    
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Talent List</h1>
-                        </div>
-                        
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
 
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="card-title">My Skill List</h3>
-                                </div>
-                                <!-- /.card-header -->
-                                <div class="card-body">
+        <section class="content-header">
+            <div class="container-fluid">
 
-                                    <table class="table table-bordered">
-                                        <thead>
-                                            <tr>
-                                                <th style="width: 10px">#</th>
-                                                <th>Talent</th>
-                                                <th>Rate</th>
-                                                <th></th>
+            </div>
+        </section>
 
-                                                <th style="width: 40px"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            @foreach (var item in Model)
-                                            {
-
-                                                if (item.Rate >= 0 && item.Rate <= 50)
-                                                {
-                                                    renk = "progress-bar bg-warning";
-                                                    labelRenk = "badge bg-warning";
-                                                }
-                                                if (item.Rate >= 51 && item.Rate <= 70)
-                                                {
-                                                    renk = "progress-bar bg-primary";
-                                                    labelRenk = "badge bg-primary";
-                                                }
-                                                if (item.Rate >= 71 && item.Rate <= 100)
-                                                {
-                                                    renk = "progress-bar bg-success";
-                                                    labelRenk = "badge bg-success";
-                                                }
-                                                <tr>
-                                                    <td>@item.Id</td>
-                                                    <td>@item.Talent</td>
-
-                                                    <td>
-                                                        <div class="progress progress-xs">
-                                                            <div class="@renk" style="width: @item.Rate%"></div>
-                                                        </div>
-                                                    </td>
-                                                    <td><span class="@labelRenk">@item.Rate</span></td>
-                                                    <td>
-                                                        <a href="/Abilities/deleteAbilities/@item.Id" class="@labelRenk">Delete</a>
-                                                        <a href="/Abilities/updateAbilities/@item.Id" class="@labelRenk">Update</a>
-                                                    </td>
-                                                </tr>
-                                            }
-                                        </tbody>
-                                    </table>
-                                    <br />
-                                    <a href="/Abilities/newAbilities" class="btn btn-dark">Add Talent</a>
-                                    
-                                </div>
-                             
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">My Skill List</h3>
                             </div>
-                        
+
+                            <div class="card-body">
+
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Talent</th>
+                                            <th>Rate</th>
+                                            <th></th>
+
+                                            <th style="width: 40px"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+
+                                            if (item.Rate >= 0 && item.Rate <= 50)
+                                            {
+                                                renk = "progress-bar bg-warning";
+                                                labelRenk = "badge bg-warning";
+                                            }
+                                            if (item.Rate >= 51 && item.Rate <= 70)
+                                            {
+                                                renk = "progress-bar bg-primary";
+                                                labelRenk = "badge bg-primary";
+                                            }
+                                            if (item.Rate >= 71 && item.Rate <= 100)
+                                            {
+                                                renk = "progress-bar bg-success";
+                                                labelRenk = "badge bg-success";
+                                            }
+                                            <tr>
+                                                <td>@item.Id</td>
+                                                <td>@item.Talent</td>
+
+                                                <td>
+                                                    <div class="progress progress-xs">
+                                                        <div class="@renk" style="width: @item.Rate%"></div>
+                                                    </div>
+                                                </td>
+                                                <td><span class="@labelRenk">@item.Rate</span></td>
+                                                <td>
+                                                    <a href="/Abilities/deleteAbilities/@item.Id" class="@labelRenk">Delete</a>
+                                                    <a href="/Abilities/updateAbilities/@item.Id" class="@labelRenk">Update</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                                <br />
+                                <a href="/Abilities/newAbilities" class="btn btn-dark">Add Talent</a>
+
+                            </div>
+
                         </div>
-                      
+
                     </div>
-                  
+
                 </div>
-            </section>
-        
-        </div>
-     
+
+            </div>
+        </section>
+
+    </div>
+
 </body>
 </html>

@@ -7,9 +7,9 @@ using AdminPanelliDinamikCV_App.Models.Entity;
 
 namespace AdminPanelliDinamikCV_App.Controllers
 {
+    [AllowAnonymous] // bu controller için authorize devre dışı bırak. Yani sisteme login olmadan da erişebilelim.
     public class DefaultController : Controller
     {
-        // GET: Default
 
         DbCvSitesiEntities dbCv = new DbCvSitesiEntities(); //nesne oluşturduk.
         public ActionResult Index()

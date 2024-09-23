@@ -32,5 +32,12 @@ namespace AdminPanelliDinamikCV_App.Controllers
                 return RedirectToAction("Index", "Login");
             }
         }
+
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();  // oturum açmış kullanıcının oturumunu sonlandırmak için kullanılır.
+            Session.Abandon();  //session terket anlamında. mevcut oturum sonlandırılır,oturum verileri sunucu tarafından temizlenir taki yeni bir oturum başlatılana kadar
+            return RedirectToAction("Index", "Login");
+        }
     }
 }

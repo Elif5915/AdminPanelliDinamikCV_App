@@ -17,5 +17,10 @@ namespace AdminPanelliDinamikCV_App.Models.Entity
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
+
+        internal void TAdd(Admin admin)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
